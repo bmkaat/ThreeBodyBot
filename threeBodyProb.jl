@@ -235,7 +235,7 @@ function nBodyStep!(coords,masses,Δt,maxSep,nBodies,G=6.67408313131313e-11,R=no
     end
 end
 
-function getData(nBodies; totalETol = 1e-5, maxIter = 1000, maxTime=60,minYrs=15,tweet=nothing,custom=false,maxSep=150,G=6.67408313131313e-11) #currently only implemented for 3 bodies
+function getData(nBodies; totalETol = 1e-5, maxIter = 1000, maxTime=300,minYrs=15,tweet=nothing,custom=false,maxSep=150,G=6.67408313131313e-11) #currently only implemented for 3 bodies
     plotPts = maxTime*10000; EframeTol = totalETol/10000 #10000 gives scaling of ~1 sec per plot frame
     yearSec = 365*24*3600
     m,rad,coords = zeros(nBodies), zeros(nBodies), [zeros(nBodies),zeros(nBodies),zeros(nBodies),zeros(nBodies)]
